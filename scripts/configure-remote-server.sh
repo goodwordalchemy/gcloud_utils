@@ -1,3 +1,9 @@
+if [ "$#" -ne 1 ]
+then
+    echo "Usage: You need to pass an instance name as an argument"
+    exit 1
+fi
+
 export INSTANCE_NAME="$1"
 
 gcloud compute \
@@ -11,8 +17,4 @@ gcloud compute \
     --image "nvidia-gpu-cloud-image-20180816" \
     --image-project "nvidia-ngc-public" \
     --boot-disk-size "200" \
-    --boot-disk-type "pd-standard" 
-
-sleep 5
-
-gcloud compute scp --recurse . $INSTANCE_NAME:~/gcloud_utils
+    --boot-disk-type "pd-standard" &&
