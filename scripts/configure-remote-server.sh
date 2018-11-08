@@ -17,4 +17,4 @@ gcloud compute \
     --image "nvidia-gpu-cloud-image-20180816" \
     --image-project "nvidia-ngc-public" \
     --boot-disk-size "200" \
-    --boot-disk-type "pd-standard" &&
+    --boot-disk-type "pd-standard" 
